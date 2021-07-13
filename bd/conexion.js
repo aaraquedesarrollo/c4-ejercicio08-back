@@ -17,6 +17,7 @@ mongoose.connect(
         chalk.redBright.bold("No se ha podido conectar a la base de datos")
       );
       debug(chalk.redBright.bold(err.message));
+      process.exit(1);
       return;
     }
     debug(chalk.yellowBright.bold("Conectado a la base de datos"));

@@ -20,8 +20,15 @@ const errorGeneral = (err, req, res, next) => {
   res.status(codigo).json({ error: true, mensaje });
 };
 
+const crearError = (mensaje, codigoError) => {
+  const error = new Error(mensaje);
+  error.codigo = codigoError;
+  return error;
+};
+
 module.exports = {
   errorServidor,
   error404,
   errorGeneral,
+  crearError,
 };
