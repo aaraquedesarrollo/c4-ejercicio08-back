@@ -29,6 +29,20 @@ const crearUsuarios = async () => {
   }
 };
 
+const comprobarUsuario = async (usernameBody, contrasenyaBody) => {
+  try {
+    const usuarioComprobado = await Usuario.findOne({
+      username: usernameBody,
+      contrasenya: contrasenyaBody,
+    });
+    return usuarioComprobado;
+  } catch (err) {
+    debug(chalk.redBright.bold("No se ha podido buscar al usuario"));
+    debug(chalk.redBright.bold(err.message));
+  }
+};
+
 module.exports = {
   crearUsuarios,
+  comprobarUsuario,
 };
