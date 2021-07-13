@@ -42,7 +42,18 @@ const comprobarUsuario = async (usernameBody, contrasenyaBody) => {
   }
 };
 
+const comprobarUsuarioId = async (idUsuario) => {
+  try {
+    const usuarioComprobado = await Usuario.findById(idUsuario);
+    return usuarioComprobado;
+  } catch (err) {
+    debug(chalk.redBright.bold("No se ha podido buscar al usuario"));
+    debug(chalk.redBright.bold(err.message));
+  }
+};
+
 module.exports = {
   crearUsuarios,
   comprobarUsuario,
+  comprobarUsuarioId,
 };
