@@ -7,8 +7,8 @@ const rutasUsuarios = require("./rutas/usuarios");
 const rutasItems = require("./rutas/items");
 
 app.use(morganFreeman("dev"));
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 // rutas
 app.use("/usuarios", rutasUsuarios);
