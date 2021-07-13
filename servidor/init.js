@@ -1,5 +1,6 @@
+require("dotenv").config();
 const express = require("express");
-const debug = require("debug")("api:servidor:servidor");
+const debug = require("debug")("api:servidor:middlewares");
 const chalk = require("chalk");
 const { errorServidor } = require("./errores");
 
